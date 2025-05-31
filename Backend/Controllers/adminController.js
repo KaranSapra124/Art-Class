@@ -27,6 +27,7 @@ module.exports.deleteUsers = async (req, res) => {
 
 module.exports.addWorkshopContent = async (req, res) => {
   try {
+    console.log(req.query)
     console.log(req?.path, req.body)
   } catch (err) {
 

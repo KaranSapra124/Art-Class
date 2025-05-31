@@ -7,6 +7,7 @@ router.post("/add-course", addCourse);
 router.get("/get-course", getCourse);
 router.get("/get-users", getUsers)
 router.get("/delete-users/:id", deleteUsers)
+router.post("/add-art-workshop/:type")
 // router.post("/auth-user", authUser);
 // router.post("/add-lead", addContact);
 module.exports = router;
