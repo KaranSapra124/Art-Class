@@ -1,4 +1,4 @@
-const { Schema , model } = require("mongoose")
+const { Schema, model } = require("mongoose")
 
 const artWorkshop = new Schema({
     sectionType: {
@@ -15,4 +15,4 @@ const artWorkshop = new Schema({
     }
 })
 
-module.exports = model("artWorkshop",artWorkshop)
+module.exports = model("artWorkshop", artWorkshop)
