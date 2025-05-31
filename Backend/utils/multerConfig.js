@@ -3,11 +3,11 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('./cloudinary');
 
 const storage = new CloudinaryStorage({
-  cloudinary,
-  params: {
-    folder: 'uploads',
-    allowed_formats: ['jpg', 'png', 'jpeg'],
-  },
+    cloudinary,
+    params: {
+        folder: 'tara_art_class',
+        allowed_formats: ['jpg', 'png', 'jpeg'],
+    },
 });
 
 const upload = multer({ storage });

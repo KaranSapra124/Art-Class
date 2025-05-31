@@ -24,3 +24,11 @@ const users = await Users.find()
   console.log(users)
   return res.status(200).send({ message: "Deleted Successfully!", data: users })
 }
+
+module.exports.addWorkshopContent =async(req,res)=>{
+  try{
+
+  }catch(err){
+    
+  }
+}
