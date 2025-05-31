@@ -1,5 +1,6 @@
 const Courses = require("../Models/courseSchema");
 const Users = require("../Models/userSchema")
+const artWorkshop = require("../Models/artWorkshopSchema")
 module.exports.addCourse = async (req, res) => {
   const newCourse = await Courses.create(req.body);
   return res.status(201).send({ message: "New Course Added", newCourse });
@@ -27,9 +28,12 @@ module.exports.deleteUsers = async (req, res) => {
 
 module.exports.addWorkshopContent = async (req, res) => {
   try {
-    console.log(req.query)
-    console.log(req?.path, req.body)
-  } catch (err) {
+    const { type } = req.params
 
+    const newData = await artWorkshop.create({ ...req.body, sectionType: type, imageUrl: req.file?.path })
+    return res.status(201).send({ message: "Data Created!", newData })
+
+  } catch (err) {
+    return res.status(401).send({ message: "Unable To Add!" })
   }
 }

@@ -33,26 +33,41 @@ const WorkshopForm = ({ data = {}, setModal }) => {
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        // If backend expects FormData:
-        const submissionData = new FormData();
-        submissionData.append('title', formData.title);
-        submissionData.append('content', formData.content);
-        if (formData.image) {
-            submissionData.append('image', formData.image);
-        }
+    const submissionData = new FormData();
+    submissionData.append('title', formData.title);
+    submissionData.append('content', formData.content);
+    if (formData.image) {
+        submissionData.append('image', formData.image);
+    }
+    submissionData.append("type", formData?.type);
 
-        const res = await axios.post(`${import.meta.env.VITE_Backend_url}/admin/add-art-workshop/${data?.type}`)
-    };
+    try {
+        const res = await axios.post(
+            `${import.meta.env.VITE_Backend_url}/admin/add-art-workshop/${data?.type}`,
+            submissionData, // Use FormData here!
+            {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            }
+        );
+        console.log('Upload success:', res.data);
+        setModal(false);
+    } catch (error) {
+        console.error('Upload error:', error);
+    }
+};
+
 
     return (
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="bg-white p-4">
                     <h3 className="mb-4">Workshop Details</h3>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} encType='multipart/form-data'>
                         <div className="form-group mb-3">
                             <label className="form-label">Title</label>
                             <input
