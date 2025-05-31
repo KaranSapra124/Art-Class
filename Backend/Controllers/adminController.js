@@ -37,3 +37,12 @@ module.exports.addWorkshopContent = async (req, res) => {
     return res.status(401).send({ message: "Unable To Add!" })
   }
 }
+module.exports.getWorkshopContent = async (req, res) => {
+  try {
+    const { type } = req.params
+    const data = await artWorkshop.find({ sectionType: type });
+    return res.status(200).send({ message: "Data fetched ✔", data })
+  } catch (err) {
+    return res.status(401).send({ message: "Error while fetching!" })
+  }
+}

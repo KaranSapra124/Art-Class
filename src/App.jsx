@@ -106,7 +106,7 @@ const App = () => {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/admin/users" element={<Users />} />
-        <Route path="/admin/paintings" element={<Paintings/>}/>
+        <Route path="/admin/paintings" element={<Paintings />} />
       </Routes>
       {/* </UserProvider> */}
     </>
