@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const WorkshopForm = ({ data = {}, setModal }) => {
     const [formData, setFormData] = useState({
@@ -33,33 +34,33 @@ const WorkshopForm = ({ data = {}, setModal }) => {
         }
     };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const submissionData = new FormData();
-    submissionData.append('title', formData.title);
-    submissionData.append('content', formData.content);
-    if (formData.image) {
-        submissionData.append('image', formData.image);
-    }
-    submissionData.append("type", formData?.type);
+        const submissionData = new FormData();
+        submissionData.append('title', formData.title);
+        submissionData.append('content', formData.content);
+        if (formData.image) {
+            submissionData.append('image', formData.image);
+        }
+        submissionData.append("type", formData?.type);
 
-    try {
-        const res = await axios.post(
-            `${import.meta.env.VITE_Backend_url}/admin/add-art-workshop/${data?.type}`,
-            submissionData, // Use FormData here!
-            {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            }
-        );
-        console.log('Upload success:', res.data);
-        setModal(false);
-    } catch (error) {
-        console.error('Upload error:', error);
-    }
-};
+        try {
+            const res = await axios.post(
+                `${import.meta.env.VITE_Backend_url}/admin/add-art-workshop/${data?.type}`,
+                submissionData, // Use FormData here!
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                }
+            );
+            toast.success(res?.data?.message);
+            setModal(false);
+        } catch (error) {
+            console.error('Upload error:', error);
+        }
+    };
 
 
     return (
