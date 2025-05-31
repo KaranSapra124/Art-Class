@@ -1,0 +1,124 @@
+ body {
+  overflow-x: hidden;
+}
+
+
+#classesPage {
+    /* background-color: #f9f9f9; */
+    padding: 20px;
+  }
+  
+  #classesPage h2 {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 28px;
+    color: #4a4a4a;
+  }
+  
+  #classesPage h4 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  #classesPage p,
+  #classesPage ul {
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+  }
+  
+  #studentGallery img {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .blockquote {
+    background: #fff3cd;
+    padding: 15px;
+    border-left: 5px solid #ffa500;
+  }
+  
+  .blockquote-footer {
+    font-size: 14px;
+    color: #666;
+  }
+
+
+  #certificationCeremony {
+    background-color: #f2f2f2; /* Light background to differentiate section */
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#certificationCeremony h3 {
+    font-size: 26px;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#certificationCeremony p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.certification-card {
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px 0;
+}
+
+.certification-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card-img {
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.certification-card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.certification-quote {
+    background: #e8f4e8;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #4caf50;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+.certification-quote-footer {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+    margin-top: 10px;
+}
+   

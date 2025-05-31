@@ -1,0 +1,117 @@
+.hero-wrapper {
+  background-color: var(--black);
+  color:white;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 2rem;
+}
+#about-us {
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Ensure the text and arrow are aligned */
+}
+
+#arrow_gap {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+#about-us:hover #arrow_gap {
+  transform: translateX(20px); /* Moves the arrow when hovering over the parent */
+}
+.hero-container {
+  justify-content: space-around;
+  align-items: flex-end; 
+}
+
+/* left side */
+.hero-left {
+  gap: 2rem;
+}
+.hero-title {
+  position: relative;
+  z-index: 1;
+}
+.hero-title > h1 {
+  font-weight: 600;
+  font-size: 3.8rem;
+  line-height: 4rem;
+}
+.orange-circle {
+  height: 4rem;
+  width: 4rem;
+  background: var(--orange-gradient);
+  border-radius: 999px;
+  position: absolute;
+  right: 28%;
+  top: -10%;
+  z-index: -1;
+}
+.stats{
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+}
+.stat>:nth-child(1)
+{
+    font-size: 2rem;
+}
+.stat>:nth-child(1)>:last-child{
+    color: orange;
+}
+/* right side */
+
+.image-container {
+  width: 30rem;
+  height: 35rem;
+  overflow: hidden;
+  border-radius: 15rem 15rem 0 0;
+  border: 8px solid rgba(255, 255, 255, 0.12);
+}
+.image-container>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* mobile screens */
+@media  (max-width: 640px){
+  .hero-container{
+    margin-top: 2rem;
+  }
+  .hero-title>h1{
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+  .image-container{
+    width: 95%;
+    height: 25rem;
+  }
+  .stats{
+    justify-content: center;
+    gap: 1.5rem;
+    font-weight: wrap;
+  }
+  .stat>:nth-child(1){
+    font-size: 1rem;
+  }
+  .stat>:nth-child(2)
+  {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Target the <a> inside Link using the custom-link class */
+.custom-link {
+  text-decoration: none !important; /* Force removal of underline */
+  color: white !important; /* Set the desired color */
+}
+
+/* Alternatively, target the link globally for the about-us section */
+.custom-link a {
+  text-decoration: none !important; /* Ensure underline is removed */
+  color: white !important; /* Ensure color is applied */
+}
+
+

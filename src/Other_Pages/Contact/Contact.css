@@ -1,0 +1,119 @@
+/* General Gutter Spacing */
+body {
+    overflow-x: hidden;
+}
+
+.g-4, .gy-4 {
+    --bs-gutter-y: 2.5rem;
+}
+.g-4, .gx-4 {
+    --bs-gutter-x: 1.6rem;
+}
+
+/* Form Container Adjustments */
+#form-cont {
+    margin-top: -200px;
+}
+
+/* Row adjustments */
+#rowcont {
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
+}
+
+/* Image Styling */
+.rounded {
+    border-radius: var(--bs-border-radius) !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+/* Ensure box-sizing is applied to all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 576px) {
+    #form-cont {
+        margin-top: -9px;
+        width: 108%; /* Full width on small screens */
+    }
+
+    /* Make input fields and buttons full-width on smaller screens */
+    .form-floating input, 
+    .form-floating textarea, 
+    .btn {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Adjust breadcrumb margin */
+    .breadcrumb {
+        margin-bottom: 1rem;
+    }
+    
+    /* Reduce title font size */
+    h1.h3 {
+        font-size: 1.5rem; /* Smaller title for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduce gutter for medium-sized screens */
+    .row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 0.5rem;
+    }
+
+    /* Adjust form container margin */
+    #form-cont {
+        margin-top: -150px;
+    }
+
+    /* Adjust title for medium-sized screens */
+    h1.h3 {
+        font-size: 1.75rem;
+    }
+}
+
+/* iPhone specific adjustments */
+@media only screen and (min-width: 375px) and (max-width: 414px) {
+    /* Adjust input and button padding */
+    .form-floating input, 
+    .form-floating textarea, 
+    .btn {
+        padding: 10px;
+        font-size: 14px; /* Smaller font size for iPhone */
+    }
+
+    /* Title adjustments */
+    h1.h3 {
+        font-size: 1.6rem; /* Adjusted title size */
+    }
+}
+
+/* Map Container */
+.map-container {
+    margin-top: 20px;
+    text-align: center;
+}
+  
+.map-container iframe {
+    max-width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}

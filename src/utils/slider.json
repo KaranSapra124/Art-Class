@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Junior Begineer(4-8 Yrs)",
+    "price": "1200/-",
+    "detail": "Ignite creativity with fun, hands-on art projects for our youngest artists.",
+    "image": "/src/assets/sliderimg/slider1.jpg"
+  },
+  {
+    "name": "Junior Learner(9-12 Yrs)",
+    "price": "1800/-",
+    "detail": "Explore various techniques and styles to build a strong foundation in art.",
+    "image": "/src/assets/sliderimg/slider2.jpg"
+  },
+  {
+    "name": "Senior Seeker(12-15 Yrs)",
+    "price": "2500/-",
+    "detail": "Advance your skills with more detailed projects, fostering artistic growth.",
+    "image": "/src/assets/sliderimg/slider3.jpg"
+  },
+  {
+    "name": "Sr.Expressors(16+ Yrs)",
+    "price": "3000/-",
+    "detail": "Express yourself with techniques and personal creative exploration.",
+    "image": "/src/assets/sliderimg/slider4.jpg"
+  },
+  {
+    "name": "Special classes",
+    "price": "4500/-",
+    "detail": "Customized lessons for unique projects or specific artistic interests.",
+    "image": "/src/assets/sliderimg/slider5.jpg"
+  },
+  {
+    "name": "Premium Classes",
+    "price": "5000/-",
+    "detail": "Exclusive one-on-one sessions for personalized artistic mastery.",
+    "image": "/src/assets/sliderimg/slider5.jpg"
+  }
+]

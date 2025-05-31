@@ -1,0 +1,85 @@
+/* Main container styling */
+.tutorial-container {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title styling */
+  .tutorial-title {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  
+  /* Description styling */
+  .tutorial-description {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Video container for responsive iframe */
+  .video-container {
+    position: relative;
+    padding-top: 30%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 60%;
+  }
+  
+  .responsive-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .tutorial-container {
+      padding: 15px;
+    }
+    
+    .tutorial-title {
+      font-size: 2em;
+      letter-spacing: 1.5px;
+    }
+  
+    .tutorial-description {
+      font-size: 1em;
+      padding: 0 10px;
+    }
+  
+    .video-container {
+      max-width: 80%;
+      padding-top: 45%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tutorial-title {
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+  
+    .tutorial-description {
+      font-size: 0.9em;
+    }
+  
+    .video-container {
+      max-width: 90%;
+      padding-top: 50%;
+    }
+  }
+  

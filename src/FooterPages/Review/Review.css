@@ -1,0 +1,117 @@
+/* Main container */
+#testimonials-container {
+  padding: 50px 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+#testimonials-heading {
+  font-size: 2.5em;
+  margin-bottom: 50px;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #3e2c2c;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Testimonials grid */
+#testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Testimonial box */
+.testimonial {
+  background: linear-gradient(185deg,#9B5972, #1d1a18); 
+  color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.testimonial::before {
+  content: open-quote;
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  top: -20px;
+  left: 15px;
+}
+
+.testimonial::after {
+  content: close-quote;
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+}
+
+.testimonial:hover {
+  transform: scale(1.05);
+  /* background: linear-gradient(135deg, #8e44ad, #7d3c98); */
+}
+
+/* Testimonial quote */
+.testimonial-quote {
+  font-size: 1.3em;
+  font-style: italic;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  color:white;
+}
+
+/* Student name */
+.student-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fdfefe;
+  margin-top: 15px;
+}
+
+/* Student image */
+.student-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #testimonials-heading {
+    font-size: 2em;
+  }
+
+  .testimonial-quote {
+    font-size: 1.2em;
+  }
+
+  .student-name {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  #testimonials-heading {
+    font-size: 1.8em;
+  }
+
+  .testimonial-quote {
+    font-size: 1.1em;
+  }
+}

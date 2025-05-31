@@ -1,0 +1,76 @@
+.pageContainer {
+  margin: 40px;
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#heading {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 20px 0 40px;
+}
+
+#description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0 30px;
+}
+
+#fabricPaintHeading, #wallArtHeading {
+  font-size: 2rem;
+  text-align: center;
+  margin: 30px 0;
+  font-weight: bold;
+  background: linear-gradient(90deg, #5d54a4, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#carouselContainer, #gridContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#carouselCard, #gridCard {
+  flex: 0 0 250px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin: 20px;
+}
+
+#carouselImage, #gridImage {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+#carouselDescription, #gridDescription {
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  #heading, #fabricPaintHeading, #wallArtHeading {
+    font-size: 1.8rem;
+  }
+
+  #carouselCard, #gridCard {
+    width: 200px;
+  }
+}

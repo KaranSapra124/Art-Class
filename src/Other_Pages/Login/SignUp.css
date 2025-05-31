@@ -1,0 +1,61 @@
+/* General Reset */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+  
+  /* Container */
+  #signup-container {
+    padding: 1rem;
+  }
+  
+  /* Signup Card */
+  #signup-card {
+    border-radius: 0.5rem;
+  }
+  
+  /* Social Buttons */
+  #social-login a {
+    margin: 0.5rem;
+  }
+  
+  #social-login img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    #signup-card-container {
+      padding: 5px;
+    }
+  
+    #signup-card-body {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #signup-logo {
+      width: 100px;
+    }
+  
+    #signup-card-body {
+      padding: 1rem;
+    }
+  
+    #signup-title h1 {
+      font-size: 1.5rem;
+    }
+  
+    #signup-button {
+      font-size: 1rem;
+    }
+  
+    #social-login img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

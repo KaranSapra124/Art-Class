@@ -1,0 +1,72 @@
+/* Section background color */
+section {
+  background-color: rgb(0, 48, 240);
+}
+
+/* Styling for the SVG icon */
+svg.feather.feather-check {
+  width: 23px;
+  margin-bottom: 3px;
+}
+
+/* Styling for the text */
+span.h6 {
+  margin-left: 4px;
+}
+
+/* Adjusts the gap between rows */
+.row.mx-lg-n4 {
+  row-gap: 40px;
+}
+
+/* Card container hover effect */
+.square {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Scale effect on hover */
+.square:hover {
+  transform: scale(1.2);
+}
+
+/* Remove underline from links */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Scale effect for mobile view */
+  .square:hover {
+    transform: scale(1.09);
+  }
+
+  /* Reduce padding and margins on small screens */
+  .col-lg-4,
+  .col-md-6 {
+    padding: 0 15px;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust text sizes for better readability on mobile */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .h6 {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,132 @@
+/* Full container styling */
+#stats-section {
+  position: relative;
+  background-image: url('/src/assets/customer/customer2.jpg'); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Overlay to create the dark effect */
+#stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main content container */
+#stats-content {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  max-width: 900px;
+  z-index: 2;
+}
+
+/* Main heading */
+#main-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff; /* White for heading */
+  font-family: 'Poppins', sans-serif; /* Use a modern sans-serif font */
+}
+
+/* Description text */
+#description {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: white; /* Light gray for description */
+  font-family: 'Roboto', sans-serif; /* Different font for description */
+}
+
+/* Stats grid layout */
+#stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  position: relative;
+}
+
+/* Vertical lines between stats */
+#stats-grid::before, 
+#stats-grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ffffff;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#stats-grid::before {
+  left: 33.33%; /* Line between first and second stat */
+}
+
+#stats-grid::after {
+  left: 66.66%; /* Line between second and third stat */
+}
+
+/* Individual stat item */
+#stat-item {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0 20px; /* Add padding to avoid text touching the line */
+  z-index: 2; /* Ensure content is above lines */
+}
+
+/* Stat number */
+#stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; /* Use a light blue for numbers to pop */
+  font-family: 'Poppins'; /* Modern sans-serif font */
+  margin-bottom: 5px;
+}
+
+/* Stat description */
+#stat-description {
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0.8; /* Slight opacity to give it a subtle look */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  #main-heading {
+    font-size: 2rem;
+  }
+
+  #stat-number {
+    font-size: 1.5rem;
+  }
+
+  #description {
+    font-size: 0.9rem;
+  }
+
+  /* Remove vertical lines on small screens and prevent them from occupying space */
+  #stats-grid::before, 
+  #stats-grid::after {
+    display: none;
+  }
+}

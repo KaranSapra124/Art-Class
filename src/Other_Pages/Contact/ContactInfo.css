@@ -1,0 +1,64 @@
+/* Container Styling */
+
+body {
+    overflow-x: hidden;
+}
+
+#contact-info-container {
+    --bs-gutter-x: 1.875rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.marginlogo{
+    margin-top: 20px;
+}
+
+/* Card styling */
+#address-card, #email-card, #phone-card {
+    padding: 2rem;
+}
+
+.heading-color {
+    color: #000;
+}
+
+.text-primary-hover:hover {
+    color: #0d6efd;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+/* Icon styling */
+.icon_style {
+    max-width: 20%;
+}
+
+/* Reduce the icon size on mobile devices */
+@media (max-width: 576px) {
+    .icon_style {
+        max-width: 15%;
+    }
+    
+    #address-card, #email-card, #phone-card {
+        padding: 1.5rem;
+    }
+
+    /* Adjust text size for smaller screens */
+    h6 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    /* Stack the cards vertically with reduced padding */
+    .row {
+        flex-direction: column;
+        padding: 1rem;
+    }
+}

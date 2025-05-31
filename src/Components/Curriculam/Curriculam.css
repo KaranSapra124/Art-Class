@@ -1,0 +1,109 @@
+/* Slide in from the left */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide in from the right */
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Add animation to the featurette images */
+/* .featurette-image {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+} */
+
+.featurette-image.slide-left {
+  animation: slide-in-left 2s forwards; /* Trigger slide from left */
+}
+
+.featurette-image.slide-right {
+  animation: slide-in-right 2s forwards; /* Trigger slide from right */
+}
+
+/* Main heading styling */
+#main_margin {
+  margin-left: 5px;
+}
+
+#curriculam-heading {
+  position: relative;
+  font-size: 2.5rem; /* Default font size */
+  color: black;
+  margin: 1rem 0;
+  z-index: 10;
+}
+
+/* Styling for the brush shade image and text overlay */
+#brush-overlay {
+  display: inline-block;
+  position: relative;
+}
+
+#brush-shade {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%)rotate(38deg);
+  opacity: 0.6; /* Adjust this value to control visibility */
+}
+
+/* Course title styling */
+#course-title {
+  font-size: 1.5rem; /* Default font size */
+}
+
+/* Course details and duration styling */
+#course-duration, #sessions-number {
+  font-size: 1.2rem; /* Adjusted font size */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  #curriculam-heading {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  #course-title {
+    font-size: 1.25rem; /* Adjust font size for course titles */
+  }
+
+  #course-duration, #sessions-number {
+    font-size: 1rem; /* Adjust font size for course duration and session number */
+  }
+
+  .lead {
+    font-size: 0.9rem; /* Adjust font size for lead text */
+  }
+}
+
+/* Adjust layout for mobile devices */
+@media (max-width: 576px) {
+  #curriculam-heading {
+    font-size: 1.75rem; /* Further adjust for extra small devices */
+  }
+
+  #course-title {
+    font-size: 1.1rem; /* Further adjust for course titles */
+  }
+
+  .featurette-image {
+    width: 100%; /* Make images full width */
+    height: auto; /* Keep aspect ratio */
+  }
+}

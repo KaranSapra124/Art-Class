@@ -1,0 +1,59 @@
+/* General Container Styling */
+.container {
+  padding: 15px;
+}
+
+/* Ensure the image takes the correct width */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+img.img-fluid.ipad-image {
+  height: 500px;
+}
+
+#bullentin {
+  width: 50px;
+}
+
+#enroll-margin {
+  margin-left: 50px;
+}
+
+/* Floating iPad image effect */
+.ipad-image {
+  max-width: 100%;
+  height: auto;
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Floating effect on hover */
+.ipad-image:hover {
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-10px);
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .ipad-image {
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Add margin for Enroll & Explore text */
+  #enroll-margin {
+    margin-left: 0;
+    margin-top: 30px; /* Adjusted margin for mobile view */
+  }
+
+  /* Adjust spacing for the lead text */
+  .lead {
+    margin-bottom: 30px; /* Adds gap between text and next content */
+  }
+}

@@ -1,0 +1,52 @@
+/* General Reset */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* Login Container */
+#login-container {
+  padding: 1rem;
+}
+
+/* Login Card */
+#login-card {
+  border-radius: 0.5rem;
+}
+/* #login-logo{
+  width: 80px;
+} */
+
+/* Custom Responsive Design */
+@media (max-width: 768px) {
+  #login-card-container {
+    padding: 5px;
+  }
+
+  #login-card-body {
+    padding: 1.5rem;
+  }
+
+  #social-login a {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #login-logo {
+    width: 100px;
+  }
+
+  #login-card-body {
+    padding: 5px;
+  }
+
+  #login-title h1 {
+    font-size: 1.5rem;
+  }
+
+  #login-button {
+    font-size: 1rem;
+  }
+}

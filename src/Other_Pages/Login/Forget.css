@@ -1,0 +1,101 @@
+/* Base styles for the forgot password form */
+#forgot-password-container {
+    padding: 20px;
+  }
+  
+  .card {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    background-color: #fff;
+    padding: 24px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #6c757d;
+  }
+  
+  .form-control {
+    height: 48px;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ced4da;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+ #resetbtn{
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  
+  .signin-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .signin-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media queries for mobile responsiveness */
+  @media (max-width: 768px) {
+    #forgot-password-container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 20px;
+    }
+  
+    p {
+      font-size: 13px;
+    }
+  
+    .form-control {
+      height: 44px;
+      font-size: 14px;
+    }
+  
+    .btn-primary {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .signin-link {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .form-control {
+      height: 40px;
+      font-size: 12px;
+    }
+  
+    .btn-primary {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .signin-link {
+      font-size: 12px;
+    }
+  }
+  
