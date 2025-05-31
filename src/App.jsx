@@ -49,6 +49,7 @@ import OTPInput from "./Other_Pages/Login/Otp";
 import Resetpassword from "./Other_Pages/Login/Resetpassword"
 import Users from "./admin/Components/Users";
 import AdminDashboard from "./admin/Components/AdminDashboard";
+import Paintings from "./admin/Components/Art_Workshop/Paintings";
 
 const App = () => {
   return (
@@ -104,7 +105,8 @@ const App = () => {
         <Route path="/Reviews" element={<Review />} />
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Privacy" element={<Privacy />} />
-        <Route path="/admin/users" element={<Users/>} />
+        <Route path="/admin/users" element={<Users />} />
+        <Route path="/admin/paintings" element={<Paintings/>}/>
       </Routes>
       {/* </UserProvider> */}
     </>
