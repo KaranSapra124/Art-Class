@@ -1,37 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Button, Image, Modal } from 'react-bootstrap';
 import WorkshopModal from '../../Modals/WorkshopModal';
+import axios from 'axios';
 
-const mockPaintings = [
-    {
-        id: 1,
-        title: 'Sunset Bliss',
-        image: 'https://via.placeholder.com/100',
-        content: 'A beautiful sunset over the mountains.'
-    },
-    {
-        id: 2,
-        title: 'Ocean Dreams',
-        image: 'https://via.placeholder.com/100',
-        content: 'Waves crashing under the moonlight.'
-    },
-    {
-        id: 3,
-        title: 'Urban Mirage',
-        image: 'https://via.placeholder.com/100',
-        content: 'A bustling city through abstract lenses.'
-    }
-];
 
 const Paintings = () => {
     const [openModal, setOpenModal] = useState(false);
+    const [mockPaintings, setMockPaintings] = useState([
+        {
+            id: 1,
+            title: 'Sunset Bliss',
+            image: 'https://via.placeholder.com/100',
+            content: 'A beautiful sunset over the mountains.'
+        },
+        {
+            id: 2,
+            title: 'Ocean Dreams',
+            image: 'https://via.placeholder.com/100',
+            content: 'Waves crashing under the moonlight.'
+        },
+        {
+            id: 3,
+            title: 'Urban Mirage',
+            image: 'https://via.placeholder.com/100',
+            content: 'A bustling city through abstract lenses.'
+        }
+    ])
     const [data, setData] = useState({
         title: "",
         content: "",
         image: "",
         type: "paintings"
     })
-
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/get-workshop/paintings`)
+            setMockPaintings(data?.data)
+        }
+        fetchData()
+    }, [])
 
     return (
         <>
@@ -56,7 +63,7 @@ const Paintings = () => {
                         {mockPaintings.map(painting => (
                             <tr key={painting.id}>
                                 <td>{painting.title}</td>
-                                <td><Image src={painting.image} alt={painting.title} width="100" rounded /></td>
+                                <td><Image src={painting.imageUrl} alt={painting.title} width="100" height={'100'} rounded /></td>
                                 <td>{painting.content}</td>
                                 <td>
                                     <Button variant="warning" size="sm" className="me-2">Edit</Button>
