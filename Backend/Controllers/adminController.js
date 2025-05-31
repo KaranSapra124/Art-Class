@@ -19,16 +19,16 @@ module.exports.getUsers = async (req, res) => {
 
 module.exports.deleteUsers = async (req, res) => {
   const { id } = req.params;
-   await Users.findByIdAndDelete(id);
-const users = await Users.find()
+  await Users.findByIdAndDelete(id);
+  const users = await Users.find()
   console.log(users)
   return res.status(200).send({ message: "Deleted Successfully!", data: users })
 }
 
-module.exports.addWorkshopContent =async(req,res)=>{
-  try{
+module.exports.addWorkshopContent = async (req, res) => {
+  try {
+    console.log(req?.path, req.body)
+  } catch (err) {
 
-  }catch(err){
-    
   }
 }

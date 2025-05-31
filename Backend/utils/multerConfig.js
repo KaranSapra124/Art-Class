@@ -6,7 +6,7 @@ const storage = new CloudinaryStorage({
     cloudinary,
     params: {
         folder: 'tara_art_class',
-        allowed_formats: ['jpg', 'png', 'jpeg'],
+        // allowed_formats: ['jpg', 'png', 'jpeg'],
     },
 });
 
