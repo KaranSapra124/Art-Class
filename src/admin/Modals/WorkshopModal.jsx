@@ -62,6 +62,10 @@ const WorkshopForm = ({ data = {}, setModal }) => {
         }
     };
 
+    const handleDelete = async (id) => {
+        const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/delete-art-workshop/${id}`)
+        toast.success(data?.message)
+    }
 
     return (
         <div className="container mt-5">

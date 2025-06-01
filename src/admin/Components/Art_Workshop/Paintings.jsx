@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Table, Button, Image, Modal } from 'react-bootstrap';
 import WorkshopModal from '../../Modals/WorkshopModal';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
-const Paintings = () => {
+const Paintings = ({ sectionType }) => {
     const [openModal, setOpenModal] = useState(false);
     const [mockPaintings, setMockPaintings] = useState([
         {
@@ -30,11 +31,16 @@ const Paintings = () => {
         title: "",
         content: "",
         image: "",
-        type: "paintings"
+        type: sectionType
     })
+    const handleDelete = async (id) => {
+        const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/delete-art-workshop/${id}`)
+        toast.success(data?.message);
+        setMockPaintings(data?.data)
+    }
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/get-workshop/paintings`)
+            const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/get-workshop/${sectionType}`)
             setMockPaintings(data?.data)
         }
         fetchData()
@@ -60,17 +66,18 @@ const Paintings = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {mockPaintings.map(painting => (
-                            <tr key={painting.id}>
+                        {mockPaintings?.length > 0 ? mockPaintings.map(painting => (
+                            <tr key={painting._id}>
                                 <td>{painting.title}</td>
                                 <td><Image src={painting.imageUrl} alt={painting.title} width="100" height={'100'} rounded /></td>
                                 <td>{painting.content}</td>
                                 <td>
-                                    <Button variant="warning" size="sm" className="me-2">Edit</Button>
-                                    <Button variant="danger" size="sm">Delete</Button>
+                                    <Button variant="danger" onClick={() => handleDelete(painting?._id)} size="sm">Delete</Button>
                                 </td>
                             </tr>
-                        ))}
+                        )) : <div>
+                            <h1 className='text-center m-auto w-100'>No Data Found!</h1>
+                        </div>}
                     </tbody>
                 </Table>
             </div>
