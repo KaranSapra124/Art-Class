@@ -2,15 +2,6 @@ import React, { useEffect, useState } from 'react';
 import './Painting.css';
 import { motion } from 'framer-motion';
 
-import paint1 from '../../assets/Paintings/p1.jpg';
-import paint2 from '../../assets/Paintings/p2.jpg';
-import paint3 from '../../assets/Paintings/p3.jpg';
-import paint4 from '../../assets/Paintings/p4.jpg';
-import paint5 from '../../assets/Paintings/p5.jpg';
-import paint6 from '../../assets/Paintings/p6.jpg';
-import paint7 from '../../assets/Paintings/p7.jpg';
-import paint8 from '../../assets/Paintings/p8.jpg';
-import paint9 from '../../assets/Paintings/p9.jpg';
 import logogif from '../../assets/gif_logo/p_l.gif';
 import axios from 'axios';
 
@@ -34,7 +25,7 @@ const Painting = () => {
   useEffect(() => {
 
     fetchData()
-    
+
   }, [])
 
   return (
@@ -55,7 +46,7 @@ const Painting = () => {
         </motion.div>
       </div>
       <div id="galleryContainer">
-        {images.map((image, index) => (
+        {images?.length > 0 ? images.map((image, index) => (
           <motion.div
             key={image?._id}
             id={`galleryItem-${image?._id}`}
@@ -81,7 +72,9 @@ const Painting = () => {
               {/* <p id={`imageAdditionalText-${image?._id}`} className="imageAdditionalText">{image.additionalText}</p> */}
             </div>
           </motion.div>
-        ))}
+        )) : <div className="spinner-border text-primary my-5" role="status">
+          {/* <span className="sr-only">Loading...</span> */}
+        </div>}
       </div>
     </>
   );
