@@ -49,7 +49,7 @@ module.exports.getWorkshopContent = async (req, res) => {
 module.exports.deleteArtWorkshop = async (req, res) => {
   const { id } = req.params;
   await artWorkshop.findByIdAndDelete(id);
-  const data = await artWorkshop.find()
+  // const data = await artWorkshop.find({sectionType:})
 
-  return res.status(200).send({ message: "Deleted Successfully!", data: data })
+  return res.status(200).send({ message: "Deleted Successfully!"})
 }

@@ -4,7 +4,7 @@ const cloudinary = require('./cloudinaryConfig');
 const storage = new CloudinaryStorage({
     cloudinary:cloudinary,
     params: {
-        folder: '',
+        folder: 'tara_art_class',
 
         // allowed_formats: ['jpg', 'png', 'jpeg'],
     },

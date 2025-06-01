@@ -1,16 +1,13 @@
-// Import React and Bootstrap dependencies
 import React, { useState } from "react";
 import {
     Container,
-    Row,
-    Col,
     Nav,
     Navbar,
     NavDropdown,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Users from "./Users";
-import Paintings from "./Art_Workshop/Paintings";
+import GlobalWorkshop from "./Global/GlobalWorkshopComponent";
 
 const AdminDashboard = () => {
     const [activeSection, setActiveSection] = useState("users");
@@ -19,8 +16,15 @@ const AdminDashboard = () => {
         switch (activeSection) {
             case "users":
                 return <Users />;
-            case "paintings":
-                return <Paintings />;
+            case "Paintings":
+            case "Landscape":
+            case "Glass Paintings":
+            case "Best of Waste Material":
+            case "Paper Craft":
+            case "Clay Work":
+            case "Mixed Media":
+            case "Quilling":
+                return <GlobalWorkshop sectionType={activeSection} />;
             default:
                 return <div>Select a section from the sidebar</div>;
         }
@@ -43,9 +47,14 @@ const AdminDashboard = () => {
                         id="artworkshop-dropdown"
                         className="text-white"
                     >
-                        <NavDropdown.Item onClick={() => setActiveSection("paintings")}>Paintings</NavDropdown.Item>
-                        <NavDropdown.Item disabled>Landscape</NavDropdown.Item>
-                        <NavDropdown.Item disabled>Portraits</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Paintings")}>Paintings</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Landscape")}>Landscape</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Glass Paintings")}>Glass Paintings</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Best of Waste Material")}>Best of Waste Material</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Paper Craft")}>Paper Craft</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Clay Work")}>Clay Work</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Mixed Media")}>Mixed Media</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => setActiveSection("Quilling")}>Quilling</NavDropdown.Item>
                         <NavDropdown.Item disabled>Custom Orders</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>

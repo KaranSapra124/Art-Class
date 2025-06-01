@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-const WorkshopForm = ({ data = {}, setModal }) => {
+const WorkshopForm = ({ data = {}, setModal , reloadData }) => {
     const [formData, setFormData] = useState({
         title: data.title || '',
         image: null, // File object
@@ -56,16 +56,14 @@ const WorkshopForm = ({ data = {}, setModal }) => {
                 }
             );
             toast.success(res?.data?.message);
+            reloadData()
             setModal(false);
         } catch (error) {
             console.error('Upload error:', error);
         }
     };
 
-    const handleDelete = async (id) => {
-        const { data } = await axios.get(`${import.meta.env.VITE_Backend_url}/admin/delete-art-workshop/${id}`)
-        toast.success(data?.message)
-    }
+   
 
     return (
         <div className="container mt-5">
