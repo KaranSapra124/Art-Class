@@ -46,3 +46,10 @@ module.exports.getWorkshopContent = async (req, res) => {
     return res.status(401).send({ message: "Error while fetching!" })
   }
 }
+module.exports.deleteArtWorkshop = async (req, res) => {
+  const { id } = req.params;
+  await artWorkshop.findByIdAndDelete(id);
+  const data = await artWorkshop.find()
+
+  return res.status(200).send({ message: "Deleted Successfully!", data: data })
+}

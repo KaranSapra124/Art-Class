@@ -9,6 +9,7 @@ router.get("/get-users", getUsers)
 router.get("/delete-users/:id", deleteUsers)
 router.post("/add-art-workshop/:type", upload.single('image'), addWorkshopContent);
 router.get("/get-workshop/:type", getWorkshopContent)
+router.get("/delete-art-worshop/:id", deleteArtWorkshop)
 // router.post("/auth-user", authUser);
 // router.post("/add-lead", addContact);
 module.exports = router;
