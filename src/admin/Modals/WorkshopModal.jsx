@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 
-const WorkshopForm = ({ data = {}, setModal , reloadData }) => {
+const WorkshopForm = ({ data = {}, setModal}) => {
+    const [isLoading, setIsLoading] = useState(false)
     const [formData, setFormData] = useState({
         title: data.title || '',
         image: null, // File object
@@ -46,6 +47,7 @@ const WorkshopForm = ({ data = {}, setModal , reloadData }) => {
         submissionData.append("type", formData?.type);
 
         try {
+            setIsLoading(true)
             const res = await axios.post(
                 `${import.meta.env.VITE_Backend_url}/admin/add-art-workshop/${data?.type}`,
                 submissionData, // Use FormData here!
@@ -55,15 +57,16 @@ const WorkshopForm = ({ data = {}, setModal , reloadData }) => {
                     },
                 }
             );
+            setIsLoading(false)
             toast.success(res?.data?.message);
-            reloadData()
             setModal(false);
+
         } catch (error) {
             console.error('Upload error:', error);
         }
     };
+  
 
-   
 
     return (
         <div className="container mt-5">
@@ -114,11 +117,11 @@ const WorkshopForm = ({ data = {}, setModal , reloadData }) => {
                             />
                         </div>
 
-                        <div className="d-flex justify-content-end">
+                        <div className="d-flex gap-2 justify-content-end">
                             <button type="submit" className="btn btn-primary">
-                                Save Workshop
+                                {isLoading ? "Loading...." : "Save Workshop"}
                             </button>
-                            <button onClick={() => setModal(false)} className="btn btn-danger">
+                            <button onClick={() => setModal(false)} className="btn  btn-danger">
                                 Cancel
                             </button>
                         </div>

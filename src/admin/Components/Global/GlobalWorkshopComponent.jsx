@@ -24,14 +24,19 @@ const GlobalWorkshop = ({ sectionType }) => {
         setMockPaintings(data?.data)
     }
     useEffect(() => {
-        console.log(sectionType)
+       
         fetchData()
         setData((prev) => ({ ...prev, type: sectionType }))
     }, [sectionType])
 
+    useEffect(()=>{
+        fetchData()
+    },[openModal === false])
+    
+
     return (
         <>
-            {openModal && <Modal animation centered show={openModal} reloadData={fetchData}>
+            {openModal && <Modal animation centered show={openModal} reloadData={()=>fetchData()}>
                 <WorkshopModal data={data} setModal={setOpenModal} /></Modal>}
             <div className="p-4">
                 <div className="d-flex justify-content-between align-items-center mb-4">
