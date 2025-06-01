@@ -1,6 +1,7 @@
 const Courses = require("../Models/courseSchema");
 const Users = require("../Models/userSchema")
 const artWorkshop = require("../Models/artWorkshopSchema")
+const cloudinary = require('../utils/cloudinaryConfig')
 module.exports.addCourse = async (req, res) => {
   const newCourse = await Courses.create(req.body);
   return res.status(201).send({ message: "New Course Added", newCourse });
@@ -48,8 +49,18 @@ module.exports.getWorkshopContent = async (req, res) => {
 }
 module.exports.deleteArtWorkshop = async (req, res) => {
   const { id } = req.params;
+  const dataToDelete = await artWorkshop.findById(id)
+  const parts = dataToDelete?.imageUrl?.split('/');
+  // console.log(parts,'DATATATAT')
+  // const folderIndex = parts?.findIndex(part => part === 'upload') + 1;
+  // const publicIdWithExtension = parts?.slice(parts.length)?.join('/'); // e.g. "tara_art_class/sample_image.jpg"
+ 
+  const publicId = parts[parts.length - 1]?.replace(/\.[^/.]+$/, '');   // remove extension (e.g. .jpg)
+
+  const result = await cloudinary?.uploader?.destroy(`tara_art_class/${publicId}`);
+
   await artWorkshop.findByIdAndDelete(id);
   // const data = await artWorkshop.find({sectionType:})
 
-  return res.status(200).send({ message: "Deleted Successfully!"})
+  return res.status(200).send({ message: "Deleted Successfully!" })
 }
